@@ -8,10 +8,18 @@
 </head>
 <body>
     <main>
-        <div class="flex-container">
-            <button class="choice-btn" onclick="playerChoice=0, btnClickSfx.play()">🪨</button>
-            <button class="choice-btn" onclick="playerChoice=1, btnClickSfx.play()">📄</button>
-            <button class="choice-btn" onclick="playerChoice=2, btnClickSfx.play()">✂️</button>
+        <div class="flex-container" id="score">
+            <h2>CPU:</h2><span id="computer-score">0</span>
+            <h2>Player:</h2><span id="human-score">0</span>
+        </div>
+        <div class="flex-container" id="flex-container">
+            <button class="choice-btn" id="rock">🪨</button>
+            <button class="choice-btn" id="paper">📄</button>
+            <button class="choice-btn" id="scissors">✂️</button>
+        </div>
+        <div class="flex-container hidden" id="results">
+            <h2 id="round-results">Player chose <span id="player-choice"></span>. Computer chose <span id="computer-choice"></span>.</h2>
+            <h2 id="game-results"></h2>
         </div>
     </main>
     <script src="assets/scripts/main.js"></script>
