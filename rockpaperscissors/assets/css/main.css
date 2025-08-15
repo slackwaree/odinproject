@@ -1,0 +1,50 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.choice-btn {
+  border-radius: 24px;
+  border: 0;
+  background-color: #fafafa;
+  box-shadow: 8px 8px 4px #eeefff;
+  font-size: 5em;
+  transition: 0.2s ease;
+  height: 200px;
+  width: 200px;
+}
+.choice-btn:hover {
+  background-color: #e7e7e7;
+  padding: 0.5em;
+}
+.choice-btn:active {
+  padding: 0.7em;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 33.33vh;
+  gap: 1em;
+}
+
+/* REWRITE ALL CODE BELOW IN SCSS */
+
+#score * {
+  font-size: 2em;
+  font-family: monospace;
+}
+#results * {
+  font-size: 2em;
+  font-family: monospace;
+  text-align: center;
+}
+.hidden {
+  display: none;
+}
+
+
+/*# sourceMappingURL=main.css.map */
