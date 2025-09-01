@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+</head>
+<body>
+    <main>
+        <div class="flex-container" id="score">
+            <h2>CPU:</h2><span id="computer-score">0</span>
+            <h2>Player:</h2><span id="human-score">0</span>
+        </div>
+        <div class="flex-container" id="flex-container">
+            <button class="choice-btn" id="rock">🪨</button>
+            <button class="choice-btn" id="paper">📄</button>
+            <button class="choice-btn" id="scissors">✂️</button>
+        </div>
+        <div class="flex-container hidden" id="results">
+            <h2 id="round-results">Player chose <span id="player-choice"></span>. Computer chose <span id="computer-choice"></span>.</h2>
+            <h2 id="game-results"></h2>
+        </div>
+    </main>
+    <script src="assets/scripts/main.js"></script>
+</body>
+</html>
