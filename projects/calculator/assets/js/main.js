@@ -26,10 +26,28 @@ operatorOrNumberBtn.forEach(element => {
                     operate();
                     return;
                 }
-            case OPERATORS.indexOf(element.value) != -1 && operatorSelection == null: // check for operator and if an operator has been selected and is NaN
-                operatorSelection = element.value;
-                display.textContent += element.textContent;
                 return;
+            case element.value == 'back':
+                if (operatorSelection != null && firstNum != '' && secondNum == '') {
+                    operatorSelection = null;
+                }
+                else if (operatorSelection == null && firstNum != '' && secondNum == '') {
+                    firstNum = firstNum.slice(0, -1);
+                }
+                else if (operatorSelection != null) {
+                    secondNum = secondNum.slice(0, -1);
+                }
+                display.textContent = display.textContent.slice(0, -1);
+                return;
+            case OPERATORS.indexOf(element.value) != -1: // check for operator and if an operator has been selected and is NaN
+                if (operatorSelection == null) {
+                    operatorSelection = element.value;
+                    display.textContent += element.textContent;
+                    return;
+                }
+                else {
+                    return;
+                }
             case operatorSelection == null: // if operatorSelection is null, append value of display.value to firstNum
                 firstNum += element.value;
                 display.textContent += element.textContent;
@@ -68,9 +86,3 @@ function operate() {
     operatorSelection = null;
 }
 
-/* TO DO
-Add backspace button
-Add keyboard support
-Empty display on number input
-Add disabled property to button on decimal input
-*/
