@@ -42,6 +42,19 @@ body {
     margin-bottom: 3rem; /* Couldn't figure out any other way to center text in-line with img  */
 }
 
+.container .img-container #img-attribution {
+    position: absolute;
+    left: 22vh;
+    bottom: 0;
+    bottom: 0;
+    color: white;
+    opacity: 50%;
+    margin-bottom: 5px;
+}
+.container .img-container #img-attribution a {
+    color: white;
+}
+
 .container .form-container .intro-paragraph {
     margin: 2.5rem;
     margin-top: 8rem;
