@@ -1,0 +1,133 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+}
+
+@font-face {
+    font-family: 'Norse-Bold';
+    src: url(../fonts/Norse-Bold.otf);
+}
+
+.container {
+    display: flex;
+}
+
+.container .img-container img {
+    height: 100vh;
+}
+
+.container .img-container .overlay {
+    display: flex;
+    justify-content: center;
+    padding: 1em 0;
+    background-color: rgba(1, 1, 1, 0.4);
+    max-width: 661px;
+    width: 100%;
+    height: 10rem;
+    position: absolute;
+    top: 25%;
+}
+.container .img-container .overlay img {
+    height: 100%;
+    vertical-align: middle;
+}
+
+.container .img-container .overlay h1 {
+    align-self: center;
+    font-family: 'Norse-Bold', arial;
+    font-size: 7rem;
+    font-weight: 500; 
+    color: white;
+    margin-bottom: 3rem; /* Couldn't figure out any other way to center text in-line with img  */
+}
+
+.container .form-container .intro-paragraph {
+    margin: 2.5rem;
+    margin-top: 8rem;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.form-container {
+    background-color: rgb(238, 238, 238);
+    width: 100vw;
+    height: 100vh;
+}
+
+.form-container .child-container {
+    background-color: white;
+    box-shadow: 0 5px 5px rgb(218, 218, 218);
+    padding: 1.8rem;
+}
+
+.form-container .child-container h2 {
+    margin-top: 0;
+}
+
+.form-container .child-container fieldset {
+    display: flex;
+    border: 0;
+}
+
+.form-container .child-container fieldset:nth-child(2n) {
+    padding-bottom: 0;
+}
+
+.form-container .child-container fieldset * {
+    flex: 1;
+    margin-right: 4rem;
+    max-width: 300px;
+}
+
+.form-container .child-container fieldset label {
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    color: rgb(40, 40, 40);
+}
+
+.form-container .child-container fieldset input {
+    border: 1px solid rgb(206, 206, 206);
+    border-radius: 4px;
+    box-sizing: border-box;
+    height: 2rem;
+}
+
+.form-container .child-container fieldset input.invalid-password {
+    border: 1px solid red;
+}
+
+.form-container #submit-btn {
+    padding: 1rem 3rem;
+    margin: 2.8rem;
+    border: 0;
+    border-radius: 8px;
+    box-shadow: 5px 5px 5px rgb(198, 198, 198);
+    background-color: rgb(33, 94, 33);
+    color: white;
+    font-size: 1.2rem;
+}
+
+.form-container #login-btn {
+    display: block;
+    margin-left: 2.8rem;
+    color: black;
+    text-decoration: none;
+}
+
+.form-container span {
+    color: rgb(33, 94, 33);
+}
+
+.mobile-display {
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+    .mobile-display {
+        display: block;
+    }
+    .container {
+        display: none;
+    }
+}

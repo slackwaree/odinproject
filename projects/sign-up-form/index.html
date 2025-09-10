@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-up Form</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+    <div class="container">
+        <div class="img-container">
+            <img src="assets/img/bg-img.jpg" alt="background image">
+            <div class="overlay">
+                <img src="assets/img/odin-lined.png" alt="odin icon">
+                <h1>ODIN</h1>
+            </div>
+        </div>
+        <div class="form-container">
+            <div class="intro-paragraph">
+                <p>
+                    This is not a real online service! You know you need something like this in your life to help
+                    you realize your deepest dreams. Sign up <i>now</i> to get started.
+                </p>
+                <p>
+                    You <i>know</i> you want to.
+                </p>
+            </div>
+            <form>
+                <div class="child-container">
+                    <h2>Let's do this!</h2>
+                    <fieldset>
+                        <label for="fName">FIRST NAME</label>
+                        <label for="lName">LAST NAME</label>
+                    </fieldset>
+                    <fieldset>
+                        <input type="text" name="fName" id="fName" required>
+                        <input type="text" name="lName" id="lName" required>
+                    </fieldset>
+                    <fieldset>
+                        <label for="email">EMAIL</label>
+                        <label for="phone-num">PHONE NUMBER</label>
+                    </fieldset>
+                    <fieldset>
+                        <input type="email" name="email" id="email" required>
+                        <input type="text" name="phone-num" id="phone-num" required>
+                    </fieldset>
+                    <fieldset>
+                        <label for="password">PASSWORD</label>
+                        <label for="conf-password">CONFIRM PASSWORD</label>
+                    </fieldset>
+                    <fieldset>
+                        
+                        <input type="text" name="password" id="password" required>
+                        <input type="text" name="conf-password" id="conf-password" required>
+                    </fieldset>
+                </div>
+                <button type="submit" id="submit-btn">Create account</button>
+                <a href="#" id="login-btn">Already have an account? <span>Log in</span></a>
+            </form>
+        </div>
+    </div>
+    <h2 class="mobile-display">You are viewing this website on mobile. Please use a display larger than 600px</h2>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
