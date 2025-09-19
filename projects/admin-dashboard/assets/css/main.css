@@ -1,0 +1,224 @@
+@import url(https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap);
+:root {
+  --box-shadow: 0 5px 5px rgb(194, 194, 194);
+  --blue: rgb(61, 161, 232);
+  --br-small: 14px;
+  --br-large: 18px
+}
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  font-family: Roboto;
+  background-color: #d4e6ec
+}
+main .main-content {
+  float: right;
+  width: calc(100vw - 20rem)
+}
+main .main-content .top-zero {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  box-shadow: var(--box-shadow);
+  padding-bottom: 1rem
+}
+main .main-content .top-zero nav {
+  display: flex;
+  padding: 1.5rem
+}
+main .main-content nav input {
+  background-color: #eee;
+  border: 0;
+  border-radius: var(--br-large);
+  height: 0;
+  max-width: 35rem;
+  width: 100%;
+  padding: 1rem
+}
+main nav > img {
+  height: 2rem;
+  margin-right: 1.5rem
+}
+main nav .float-right {
+  margin-left: auto
+}
+main nav .float-right img {
+  height: 2rem;
+  margin: auto .5rem;
+  vertical-align: middle;
+  border-radius: 50%
+}
+@media screen and (max-width:1230px) {
+  main nav .float-right span#username {
+    display: none
+  }
+}
+main .intro-card {
+  display: flex
+}
+main .intro-card img {
+  width: 5rem;
+  border-radius: 50%;
+  margin: auto 1.5rem
+}
+main .intro-card .side-text {
+  width: 100%;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center
+}
+main .intro-card .side-text h2 {
+  margin: 0
+}
+main .intro-card .btn-container {
+  display: inline-flex
+}
+main .intro-card .btn-container button {
+  font-size: 1rem;
+  color: #fff;
+  background-color: var(--blue);
+  padding: 0 2rem;
+  margin: 1.2rem .5rem;
+  border: 0;
+  border-radius: 30px
+}
+main aside.nav-menu {
+  position: fixed;
+  width: 20rem;
+  background-color: var(--blue);
+  height: 100vh
+}
+main aside.nav-menu nav img {
+  margin: 1rem .8rem 1rem 1rem;
+  width: 1.5rem;
+  vertical-align: middle
+}
+main aside.nav-menu nav .flex-child:first-child * {
+  font-size: 2rem;
+  width: 3rem
+}
+img#clock-icon,
+main aside.nav-menu nav img#message-icon {
+  transform: scaleX(-1)
+}
+main aside.nav-menu nav a {
+  color: #fff;
+  font-weight: 500;
+  font-size: 1.3rem;
+  text-decoration: none;
+  vertical-align: middle
+}
+main aside.nav-menu nav .empty {
+  height: 2rem
+}
+main .main-content .heading-container {
+  display: grid;
+  grid-template-columns: repeat(3,1fr)
+}
+main .main-content .heading-container h3:nth-child(2) {
+  grid-column-start: 3;
+  margin-left: .5rem
+}
+main .main-content .heading-container h3, .grid-child:nth-child(n+7) h3  {
+  margin: 2rem;
+  margin-bottom: 0;
+  font-weight: 500
+}
+main .container .grid-container {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  margin: 1.5rem;
+  margin-top: .5rem;
+  gap: 1.5rem
+}
+@media screen and (max-width: 1100px) {
+    main .container .grid-container {
+        display: block;
+    }
+    main .container .grid-container .grid-child {
+        padding: 1px;
+        margin: 1rem;
+    }
+    main .heading-container * {
+        display: none;
+    }
+}
+main .container .grid-container .grid-child {
+  background-color: #fff;
+  border-left: 8px solid #ffae00;
+  border-radius: var(--br-small);
+  box-shadow: var(--box-shadow);
+}
+main .container .grid-container .grid-child:nth-child(7) {
+  background-color: transparent;
+  box-shadow: none;
+  grid-row: 1/4;
+  grid-column: 3;
+  font-size: .9rem;
+  border: none;
+}
+main .container .grid-container .grid-child .flex-container {
+  margin: 0;
+  overflow: visible;
+}
+main .container .grid-container .grid-child hr {
+    border-top: 1px solid rgb(226, 226, 226);
+}
+main .container .grid-container .grid-child:nth-child(n+7) .flex-item {
+  margin: 0;
+  background-color: #fff;
+  border-radius: var(--br-small);
+  max-width: 22rem;
+  box-shadow: var(--box-shadow);
+}
+main .container .grid-container .grid-child:nth-child(n+7) .flex-item h4 {
+  margin-bottom: .5rem
+}
+main .container .grid-container .grid-child:nth-child(n+7) h3 {
+  margin-left: 0;
+}
+main .container .grid-container div:nth-child(7) > aside > div:nth-child(3) > div {
+  flex-direction: row;
+}
+main .container .grid-container .grid-child:nth-child(7) img {
+  border-radius: 50%;
+  width: 3.5rem;
+  aspect-ratio: 1;
+  margin: auto .5rem;
+}
+main .container .grid-container .grid-child:nth-child(7) .side-text {
+  margin-left: .5rem;
+}
+main .container .grid-container .grid-child:nth-child(7) .side-text * {
+  margin: 0 auto;
+  align-items: center;
+}
+main .container .grid-container .grid-child * {
+  margin: 1.5rem
+}
+main .container .grid-container .grid-child p {
+  margin-top: 0;
+  color: grey
+}
+main .container .grid-container .grid-child .img-container {
+  display: flex;
+  justify-content: end
+}
+main .container .grid-container .grid-child .img-container img {
+  width: 1.5rem;
+  margin: 2rem .5rem 0 .5rem
+}
+main .container .flex-container {
+  display: inline-flex;
+  flex-direction: column;
+  overflow: hidden;
+  flex: 1
+}
+main .container .flex-container .flex-child {
+  margin-right: 1.5rem;
+  border-radius: var(--br-small);
+  flex: 1;
+  background-color: #fff
+}
