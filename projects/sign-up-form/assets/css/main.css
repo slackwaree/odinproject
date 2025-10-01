@@ -39,12 +39,12 @@ body {
     font-size: 7rem;
     font-weight: 500; 
     color: white;
-    margin-bottom: 3rem; /* Couldn't figure out any other way to center text in-line with img  */
+    margin-bottom: 3rem; /* ? */
 }
 
 .container .img-container #img-attribution {
     position: absolute;
-    left: 22vh;
+    left: 22vh; /* ? */
     bottom: 0;
     bottom: 0;
     color: white;
