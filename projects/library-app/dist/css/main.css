@@ -1,0 +1,110 @@
+body {
+  background-color: rgb(34, 34, 34);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.container .grid-item {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid white;
+  margin: 0.5rem;
+}
+.container .grid-item * {
+  margin: 0.7rem;
+  color: white;
+}
+.container h3:nth-child(1) {
+  font-size: 2rem;
+}
+.container .btn-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  flex: 1;
+  margin: 0;
+}
+.container .btn-container button {
+  height: 2rem;
+  background-color: rgb(0, 255, 0);
+  color: black;
+  border: 0;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  padding: 0.5rem;
+}
+.container .btn-container button::before {
+  content: "Is read";
+}
+.container .btn-container button:hover {
+  background-color: rgb(161, 255, 161);
+}
+.container .btn-container button.is-read {
+  background-color: red;
+  color: white;
+}
+.container .btn-container button.is-read::before {
+  content: "Not read";
+}
+
+.form-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.5s ease;
+}
+.form-container.hidden {
+  top: -100%;
+}
+.form-container form {
+  width: 12rem;
+  background-color: grey;
+  padding: 1rem;
+  border-radius: 8px;
+}
+.form-container form legend {
+  color: white;
+  font-size: 1.5rem;
+}
+.form-container form input {
+  width: 99%;
+  display: block;
+  margin: 0.7rem 0;
+  height: 2rem;
+  border: 0;
+}
+.form-container form input:nth-child(5) {
+  display: inline;
+  vertical-align: middle;
+  width: unset;
+}
+.form-container form label {
+  color: white;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+footer button {
+  color: white;
+  background-color: rgb(92, 92, 92);
+  border-radius: 8px 8px 0 0;
+  border: 0;
+  font-size: 1.2rem;
+  padding: 1rem;
+}
+footer button:hover {
+  background-color: grey;
+}
+
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,124 @@
+body {
+    background-color: rgb(34, 34, 34);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+
+    .grid-item {
+        display: flex;
+        flex-direction: column;
+        border: 2px solid white;
+        margin: 0.5rem;
+    }
+
+    .grid-item * {
+        margin: 0.7rem;
+        color: white;
+    }
+
+    h3:nth-child(1) {
+        font-size: 2rem;
+    }
+    
+    .btn-container {
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        flex: 1;
+        margin: 0;
+
+        button {
+            height: 2rem;
+            background-color: rgb(0, 255, 0);
+            color: black;
+            border: 0;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            padding: 0.5rem;
+
+            &::before {
+                content: 'Is read';
+            }
+
+            &:hover {
+                background-color: rgb(161, 255, 161);
+            }
+            &.is-read {
+                background-color: red;
+                color: white;
+
+                &::before {
+                    content: 'Not read';
+                }
+            }
+        }
+    }
+}
+
+.form-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.5s ease;
+
+    &.hidden {
+        top: -100%;
+    }
+
+    form {
+        width: 12rem;
+        background-color: grey;
+        padding: 1rem;
+        border-radius: 8px;
+
+        legend {
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        input {
+            width: 99%;
+            display: block;
+            margin: 0.7rem 0;
+            height: 2rem;
+            border: 0;
+    
+            &:nth-child(5) {
+                display: inline;
+                vertical-align: middle;
+                width: unset;
+            }
+        }
+
+        label {
+            color: white;
+        }
+    }
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    button {
+        color: white;
+        background-color: rgb(92, 92, 92);
+        border-radius: 8px 8px 0 0;
+        border: 0;
+        font-size: 1.2rem;
+        padding: 1rem;
+
+        &:hover {
+            background-color: grey;
+        }
+    }
+}
