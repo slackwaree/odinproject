@@ -1,16 +1,15 @@
 const container = document.querySelector('.container')
 const formContainer = document.querySelector('.form-container');
-
+const submitBtn = document.querySelector('.add-book-submit');
 const docFrag = document.createDocumentFragment();
 
-const submitBtn = document.querySelector('.add-book-submit');
 submitBtn.addEventListener('click', () => { // Function to create book entry
     const getBookTitle = document.getElementById('title').value;
     const getBookAuthor = document.getElementById('author').value;
     const getBookPageCount = document.getElementById('pages').value;
     const getBookIsRead = document.getElementById('isRead').checked;
-
-    if (getBookTitle != '' && getBookAuthor != '' && getBookPageCount != '') {
+    
+    if (getBookTitle != '' && getBookAuthor != '' && getBookPageCount != '') { // failsafe
         let newBookEntry = document.createElement('div');
         newBookEntry.classList.add('grid-item');
         container.appendChild(newBookEntry);
@@ -20,6 +19,10 @@ submitBtn.addEventListener('click', () => { // Function to create book entry
     
         newBookEntry.appendChild(bookContents);
         bookContents.appendChild(docFrag);
+
+        const removeBookBtn = document.createElement('div');
+        removeBookBtn.classList.add('remove-book-btn');
+        bookContents.appendChild(removeBookBtn);
 
         const book = new Book(getBookTitle, getBookAuthor, getBookPageCount, getBookIsRead);
         for (let key in book) {
@@ -47,7 +50,14 @@ submitBtn.addEventListener('click', () => { // Function to create book entry
             })
         })
     }
+    else {
+        window.alert('Please fill out all fields.')
+    }
 });
+
+removeBookBtn.addEventListener('click', () => { // function to remove book entry
+    removeBookBtn.remove();
+})
 
 const newBookBtn = document.querySelector('.new-book-btn');
 newBookBtn.addEventListener('click', () => {
@@ -60,8 +70,7 @@ function Book(title, author, pages) {
     this.pages = pages + ' pages';
 }
 
-/* 
+/*
 TODO:
-- validate form data before submission
-- kms :joy: :v:
+- allow removing of book entries
 */
