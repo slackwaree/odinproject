@@ -8,7 +8,7 @@ submitBtn.addEventListener('click', () => { // Function to create book entry
     const getBookAuthor = document.getElementById('author').value;
     const getBookPageCount = document.getElementById('pages').value;
     const getBookIsRead = document.getElementById('isRead').checked;
-    
+
     if (getBookTitle != '' && getBookAuthor != '' && getBookPageCount != '') { // failsafe
         let newBookEntry = document.createElement('div');
         newBookEntry.classList.add('grid-item');
@@ -47,17 +47,19 @@ submitBtn.addEventListener('click', () => { // Function to create book entry
         isReadBtn.forEach(item => {
             item.addEventListener('click', () => {
                 item.classList.toggle('is-read');
-            })
-        })
+            });
+        });
     }
     else {
         window.alert('Please fill out all fields.')
     }
+    let removeBookBtnList = document.querySelectorAll('.remove-book-btn'); // function to remove book entries
+    removeBookBtnList.forEach(item => {
+        item.addEventListener('click', () => {
+            item.parentElement.parentElement.remove();
+        });
+    });
 });
-
-removeBookBtn.addEventListener('click', () => { // function to remove book entry
-    removeBookBtn.remove();
-})
 
 const newBookBtn = document.querySelector('.new-book-btn');
 newBookBtn.addEventListener('click', () => {
@@ -69,8 +71,3 @@ function Book(title, author, pages) {
     this.author = 'Author: ' + author,
     this.pages = pages + ' pages';
 }
-
-/*
-TODO:
-- allow removing of book entries
-*/
