@@ -15,6 +15,10 @@ body {
         flex-direction: column;
         border: 2px solid white;
         margin: 0.5rem;
+
+        &:hover::before {
+            background-color: red;
+        }
     }
 
     .grid-item * {
@@ -22,8 +26,20 @@ body {
         color: white;
     }
 
-    h3:nth-child(1) {
+    h3:nth-child(2) {
         font-size: 2rem;
+    }
+
+    .remove-book-btn {
+        float: right;
+        transition: 0.2s ease;
+        
+        &:hover {
+            color: red;
+        }
+        &::after {
+            content: 'X';
+        }
     }
     
     .btn-container {
@@ -35,26 +51,26 @@ body {
 
         button {
             height: 2rem;
-            background-color: rgb(0, 255, 0);
-            color: black;
+            background-color: red;
+            color: white;
             border: 0;
             border-radius: 4px;
             font-size: 0.9rem;
             padding: 0.5rem;
 
             &::before {
-                content: 'Is read';
+                content: 'Not read';
             }
 
             &:hover {
                 background-color: rgb(161, 255, 161);
             }
             &.is-read {
-                background-color: red;
+                background-color: rgb(0, 255, 0);
                 color: white;
 
                 &::before {
-                    content: 'Not read';
+                    content: 'Is read';
                 }
             }
         }

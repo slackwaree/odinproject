@@ -16,12 +16,25 @@ body {
   border: 2px solid white;
   margin: 0.5rem;
 }
+.container .grid-item:hover::before {
+  background-color: red;
+}
 .container .grid-item * {
   margin: 0.7rem;
   color: white;
 }
-.container h3:nth-child(1) {
+.container h3:nth-child(2) {
   font-size: 2rem;
+}
+.container .remove-book-btn {
+  float: right;
+  transition: 0.2s ease;
+}
+.container .remove-book-btn:hover {
+  color: red;
+}
+.container .remove-book-btn::after {
+  content: "X";
 }
 .container .btn-container {
   display: flex;
@@ -32,25 +45,25 @@ body {
 }
 .container .btn-container button {
   height: 2rem;
-  background-color: rgb(0, 255, 0);
-  color: black;
+  background-color: red;
+  color: white;
   border: 0;
   border-radius: 4px;
   font-size: 0.9rem;
   padding: 0.5rem;
 }
 .container .btn-container button::before {
-  content: "Is read";
+  content: "Not read";
 }
 .container .btn-container button:hover {
   background-color: rgb(161, 255, 161);
 }
 .container .btn-container button.is-read {
-  background-color: red;
+  background-color: rgb(0, 255, 0);
   color: white;
 }
 .container .btn-container button.is-read::before {
-  content: "Not read";
+  content: "Is read";
 }
 
 .form-container {
