@@ -10,19 +10,16 @@ newBookBtn.addEventListener('click', () => {
 
 const myLibrary = [];
 
-function Book(title, author, pages) {
-    this.title = 'Title: ' + title,
-    this.author = 'Author: ' + author,
-    this.pages = pages + ' pages';
-}
-function addBookToLibrary(getBookTitle, getBookAuthor, getBookPageCount) {
-    const newBook = {
-        title: getBookTitle,
-        author: getBookAuthor,
-        pages: getBookPageCount,
-        crypto: crypto.randomUUID(),
+class Book {
+    constructor(title, author, pages, crypto) {
+        this.title = title,
+        this.author = author,
+        this.pages = pages;
+        this.crypto = crypto;
     }
-    myLibrary.push(newBook);
+    pushBook() {
+        myLibrary.push(this);
+    }
 }
 submitBtn.addEventListener('click', () => { // Function to create book entry
     const getBookTitle = document.getElementById('title').value;
@@ -30,7 +27,9 @@ submitBtn.addEventListener('click', () => { // Function to create book entry
     const getBookPageCount = document.getElementById('pages').value;
     const getBookIsRead = document.getElementById('isRead').checked;
 
-    if (getBookTitle != '' && getBookAuthor != '' && getBookPageCount != '') { // form validation
+    if (getBookTitle != '' &&
+        getBookAuthor != '' &&
+        getBookPageCount >= 1) { // form validation
         let newBookEntry = document.createElement('div');
         newBookEntry.classList.add('grid-item');
         container.appendChild(newBookEntry);
@@ -44,16 +43,21 @@ submitBtn.addEventListener('click', () => { // Function to create book entry
         const removeBookBtn = document.createElement('div');
         removeBookBtn.classList.add('remove-book-btn');
         removeBookBtn.addEventListener('click', () => {
+            console.log(book.crypto)
+            myLibrary.splice(myLibrary.indexOf(book), 1)
+            console.log(myLibrary)
             removeBookBtn.parentElement.parentElement.remove();
         })
         bookContents.appendChild(removeBookBtn);
 
-        const book = new Book(getBookTitle, getBookAuthor, getBookPageCount);
+        const book = new Book(getBookTitle, getBookAuthor, getBookPageCount, crypto.randomUUID());
         for (let key in book) {
             let h3Create = document.createElement('h3');
             h3Create.textContent = `${book[key]}`;
             bookContents.appendChild(h3Create);
-        }        
+        }
+        bookContents.lastChild.remove(); // remove crypto
+
         const createBtnContainer = document.createElement('div');
         createBtnContainer.classList.add('btn-container');
         bookContents.appendChild(createBtnContainer);
@@ -67,9 +71,9 @@ submitBtn.addEventListener('click', () => { // Function to create book entry
         })
         createBtnContainer.appendChild(createBtn);
         formContainer.classList.toggle('hidden');
-        addBookToLibrary(getBookTitle, getBookAuthor, getBookPageCount);
+        book.pushBook();
     }
     else {
-        window.alert('Please fill out all fields.');
+        window.alert('Please fill out all fields. Minimum page count is 1.');
     }
 });
